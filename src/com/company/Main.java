@@ -81,7 +81,7 @@ class NN implements Serializable {
 
     }
 
-    //adding bias neuron to each layer while feedforward
+    //adding bias neuron to each layer while feedforwardd
     private double[] addBias(final double[] tmp) {
 
         double [] rtn = new double[tmp.length+1];
