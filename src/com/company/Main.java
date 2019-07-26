@@ -277,43 +277,6 @@ public class Main {
         nn.train();
 
 
-        
-
-
-        //Let s serialize the objects and save it for later usage
-        /*FileOutputStream file = null;
-        try {
-            file = new FileOutputStream("./src/NN.ser");
-            ObjectOutputStream out = new ObjectOutputStream(file);
-
-            // Method for serialization of object
-            out.writeObject(nn);
-            out.close();
-            file.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        //And you can use the Neural Net which trained and saved earlier by deserializing it
-        NN nnDes = null;
-
-
-        ObjectInputStream in = null;
-        FileInputStream file2 = null;
-        try {
-            file2 = new FileInputStream("./src/NN.ser");
-            in = new ObjectInputStream(file2);
-            nnDes = (NN)in.readObject();
-
-            in.close();
-            file.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }*/
-
-
-
-
     }
 
 }
