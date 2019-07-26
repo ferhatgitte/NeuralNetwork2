@@ -269,8 +269,8 @@ public class Main {
 
         Vector<Integer> topology = new Vector<>();
         topology.add(784);
-        topology.add(20);
-        topology.add(20);
+        topology.add(40);
+        topology.add(40);
         topology.add(10);
         NN nn = new NN(topology,"./src/data.txt");
         nn.init();
@@ -373,19 +373,8 @@ public class Main {
             file.close();
         } catch (Exception e) {
             e.printStackTrace();
-        }
-
-        //using the Neural Net which saved earlier.
-    double[] darr = new double[2];
-
-        darr[0] = 1.0;
-        darr[1] = 1.0;
-
-        for (double d : nnDes.forwardFeed(darr)) {
-
-            System.out.println("RESULT : "+d);
-
         }*/
+
 
 
 
