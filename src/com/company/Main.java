@@ -67,7 +67,7 @@ class NN implements Serializable {
                     //System.out.print(" "+ temp +" ");
                 }
 
-                //System.out.println();
+                System.out.println(i++);
 
                 targets.add(tmp2);
                 i++;
@@ -251,6 +251,7 @@ class NN implements Serializable {
             for (int j = 0; j < arg[i].length; j++) {
                 arg[i][j] = r.nextInt() % 2 == 0 ? r.nextDouble() : -1 * r.nextDouble();
 
+                //arg[i][j] = r.nextDouble();
             }
 
         }
@@ -267,17 +268,84 @@ public class Main {
     public static void main(String[] args) {
 
         Vector<Integer> topology = new Vector<>();
-        topology.add(2);
-        topology.add(4);
-        //tp.add(16);
-        topology.add(1);
+        topology.add(784);
+        topology.add(20);
+        topology.add(20);
+        topology.add(10);
         NN nn = new NN(topology,"./src/data.txt");
         nn.init();
         nn.train();
 
 
+        /*Scanner ms = null;
+        FileWriter fw = null;
+        try {
+            ms = new Scanner(new File("./src/data2.txt"));
+            fw = new FileWriter(new File("./src/data.txt"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        int i = 0;
+        while(ms.hasNextLine()) {
+
+            if(i>4000)
+                break;
+            i++;
+            String line = ms.nextLine();
+            String[] columns = line.split(",");
+
+            Vector<Integer> inpt = new Vector<>();
+
+            //System.out.print("inputs : ");
+            for (int k = 0; k < columns.length; k++) {
+                //System.out.println(columns[i]);
+                Integer temp = new Integer(Integer.parseInt(columns[k]));
+                inpt.add(temp);
+                //System.out.print(" "+ temp +" ");
+            }
+
+            Vector<Double>  targets = new Vector<>();
+            targets.add(inpt.lastElement() == 1 ? 1.0 : 0.0);
+            targets.add(inpt.lastElement() == 2 ? 1.0 : 0.0);
+            targets.add(inpt.lastElement() == 3 ? 1.0 : 0.0);
+            targets.add(inpt.lastElement() == 4 ? 1.0 : 0.0);
+            targets.add(inpt.lastElement() == 5 ? 1.0 : 0.0);
+            targets.add(inpt.lastElement() == 6 ? 1.0 : 0.0);
+            targets.add(inpt.lastElement() == 7 ? 1.0 : 0.0);
+            targets.add(inpt.lastElement() == 8 ? 1.0 : 0.0);
+            targets.add(inpt.lastElement() == 9 ? 1.0 : 0.0);
+            targets.add(inpt.lastElement() == 0 ? 1.0 : 0.0);
+
+            System.out.println("inputSize : " +(inpt.size()-1) + "targets Size : "+targets.size());
+
+            try {
+
+
+                for(int k=0;k<inpt.size()-1;k++) {
+                    fw.append(inpt.get(k) == 0 ? "0.0" : "1.0");
+                    fw.append(' ');
+                }
+                fw.append('\n');
+                for(int l=0;l<targets.size();l++)
+                {
+                    fw.append(targets.get(l) == 1.0 ? "1.0" : "0.0");
+                    fw.append(' ');
+                }
+                fw.append('\n');
+                System.out.println("writing...");
+                inpt.clear();
+                targets.clear();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+
+
+
         //Let s serialize the objects and save it for later usage
-        FileOutputStream file = null;
+        /*FileOutputStream file = null;
         try {
             file = new FileOutputStream("./src/NN.ser");
             ObjectOutputStream out = new ObjectOutputStream(file);
@@ -317,7 +385,7 @@ public class Main {
 
             System.out.println("RESULT : "+d);
 
-        }
+        }*/
 
 
 
