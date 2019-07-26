@@ -277,71 +277,7 @@ public class Main {
         nn.train();
 
 
-        /*Scanner ms = null;
-        FileWriter fw = null;
-        try {
-            ms = new Scanner(new File("./src/data2.txt"));
-            fw = new FileWriter(new File("./src/data.txt"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        int i = 0;
-        while(ms.hasNextLine()) {
-
-            if(i>4000)
-                break;
-            i++;
-            String line = ms.nextLine();
-            String[] columns = line.split(",");
-
-            Vector<Integer> inpt = new Vector<>();
-
-            //System.out.print("inputs : ");
-            for (int k = 0; k < columns.length; k++) {
-                //System.out.println(columns[i]);
-                Integer temp = new Integer(Integer.parseInt(columns[k]));
-                inpt.add(temp);
-                //System.out.print(" "+ temp +" ");
-            }
-
-            Vector<Double>  targets = new Vector<>();
-            targets.add(inpt.lastElement() == 1 ? 1.0 : 0.0);
-            targets.add(inpt.lastElement() == 2 ? 1.0 : 0.0);
-            targets.add(inpt.lastElement() == 3 ? 1.0 : 0.0);
-            targets.add(inpt.lastElement() == 4 ? 1.0 : 0.0);
-            targets.add(inpt.lastElement() == 5 ? 1.0 : 0.0);
-            targets.add(inpt.lastElement() == 6 ? 1.0 : 0.0);
-            targets.add(inpt.lastElement() == 7 ? 1.0 : 0.0);
-            targets.add(inpt.lastElement() == 8 ? 1.0 : 0.0);
-            targets.add(inpt.lastElement() == 9 ? 1.0 : 0.0);
-            targets.add(inpt.lastElement() == 0 ? 1.0 : 0.0);
-
-            System.out.println("inputSize : " +(inpt.size()-1) + "targets Size : "+targets.size());
-
-            try {
-
-
-                for(int k=0;k<inpt.size()-1;k++) {
-                    fw.append(inpt.get(k) == 0 ? "0.0" : "1.0");
-                    fw.append(' ');
-                }
-                fw.append('\n');
-                for(int l=0;l<targets.size();l++)
-                {
-                    fw.append(targets.get(l) == 1.0 ? "1.0" : "0.0");
-                    fw.append(' ');
-                }
-                fw.append('\n');
-                System.out.println("writing...");
-                inpt.clear();
-                targets.clear();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-        }
-
+        
 
 
         //Let s serialize the objects and save it for later usage
