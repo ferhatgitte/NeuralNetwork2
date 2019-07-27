@@ -3,9 +3,13 @@ Neural Network Java Implementation
 input file formaat is as following :
 
 1.0 0.0 0.0 0.0 1.0 1.0 0.0//this is input
+
 0.0 1.0 0.0 0.0//this is output
+
 1.0 0.0 0.0 0.0 1.0 1.0 0.0//this is input
+
 0.0 1.0 0.0 0.0//this is output
+
 ...
 ...
 ...
